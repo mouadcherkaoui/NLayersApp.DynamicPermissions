@@ -1,0 +1,4 @@
+**/bin
+**/obj
+**/.vs
+/NLayersApp.DynamicPermissions/NLayersApp.DynamicPermissions.csproj.user
