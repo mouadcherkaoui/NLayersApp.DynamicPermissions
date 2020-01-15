@@ -74,6 +74,8 @@ namespace NLayersApp.DynamicPermissions.Services
             if (context.Filters.Any(item => item is IAllowAnonymousFilter))
                 return false;
 
+            if (!typeof(ControllerActionDescriptor).IsAssignableFrom(context.ActionDescriptor.GetType())) return false;
+
             var controllerActionDescriptor = (ControllerActionDescriptor)context.ActionDescriptor;
             var controllerTypeInfo = controllerActionDescriptor.ControllerTypeInfo;
             var actionMethodInfo = controllerActionDescriptor.MethodInfo;
